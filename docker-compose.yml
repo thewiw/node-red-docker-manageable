@@ -1,0 +1,28 @@
+services:
+  node-red:
+    image: node-red-manageable:3.0.2-16
+    build:
+        context: .
+        args:
+          - NODE_RED_VERSION=3.0.2
+          - NODE_VERSION=16
+    environment:
+      - NODE_RED_SET_EDITOR_USERS_BY_FILE=true
+      - NODE_RED_CREDENTIAL_SECRET=mystaticsecret
+      - NODE_RED_HTTP_NODE_USER=uiuser:$$2b$$08$$mybcryppassword
+      - NODE_RED_HTTP_STATIC_USER=resourcesuser:$$2b$$08$$mybcryppassword
+    cap_drop:
+      - ALL
+    cap_add:
+      - CAP_NET_BIND_SERVICE
+    deploy:
+      replicas: 1
+    expose:
+      - "1880"
+    ports:
+      - "1880:1880"
+    volumes:
+      - node-red.data:/data
+volumes:
+    node-red.data:
+

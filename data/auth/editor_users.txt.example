@@ -1,0 +1,17 @@
+[
+  {
+    "username": "admin",
+    "password": "$2b$08XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    "permissions": ["*"]
+  },
+  {
+    "username": "writer",
+    "password": "$2b$08XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    "permissions": ["read","flows.write","nodes.read"]
+  },
+  {
+    "username": "reader",
+    "password": "$2b$08XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    "permissions": ["read"]
+  }
+]
