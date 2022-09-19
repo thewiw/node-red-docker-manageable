@@ -7,7 +7,7 @@ Standard settings.js file is just slightly modified so you keep the existing beh
 It can be use like standard NodeRed image. Just add environment variables to get the new features. E.g.:
 ```
 docker run -it -p 1880:1880 -v myNodeREDdata:/data -e NODE_RED_CREDENTIAL_SECRET="foo" --name mynodered thewiwcorp/node-red
-docker run -it -p 1880:1880 -v myNodeREDdata:/data -v myusers.txt:/data/auth/editor_users.txt -e NODE_RED_SET_EDITOR_USERS_BY_FILE=true --name mynodered thewiwcorp/node-red
+docker run -it -p 1880:1880 -v myNodeREDdata:/data -v myusers.txt:/data/auth/editor_users.txt -e NODE_RED_SET_EDITOR_USERS_BY_FILE=true --name mynodered thewiwcorp/node-red-manageable
 ```
 
 ## Current features
@@ -114,7 +114,7 @@ docker compose build
 ### Run a container
 Either:
 ```
-docker run -it -p 1880:1880 -v myNodeREDdata:/data -v myusers.txt:/data/auth/editor_users.txt -e NODE_RED_SET_EDITOR_USERS_BY_FILE=true --name mynodered thewiwcorp/node-red
+docker run -it -p 1880:1880 -v myNodeREDdata:/data -v myusers.txt:/data/auth/editor_users.txt -e NODE_RED_SET_EDITOR_USERS_BY_FILE=true --name mynodered thewiwcorp/node-red-manageable
 ```
 Or:
 ```
@@ -131,4 +131,6 @@ docker compose up
 If you want to improve this project, feel free to contact us or to send a pull request.
 
 ### Change log
+- 0.0.1: Initial features: editor and api authorization file, credential secret, http node and http static users
+- 0.0.2: Missing file and README fix
 - 0.0.1: Initial features: editor and api authorization file, credential secret, http node and http static users
